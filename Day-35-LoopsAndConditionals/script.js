@@ -175,14 +175,17 @@ let attempt = 0;
 let amount;
 while (attempt < 3) {
   amount = +prompt("Enter amount you want to withdraw");
-  if (amount > currentBalance) {
-    console.log(`Amount entered is too high than existing balance`);
-    attempt++;
+  if (isNaN(amount) || amount < 0 || amount === 0) {
+    console.log("Please enter valid amount!!!");
+    break;
+  } else if (amount > currentBalance) {
+    console.log(`Insufficient Balance`);
+    break;
   } else {
     currentBalance = currentBalance - amount;
     console.log(
-      `Amount debited ${amount}, your current balance is ${currentBalance}`
+      `Amount withdrawn ${amount}, Your current balance is ${currentBalance}`
     );
-    attempt++;
   }
+  attempt++;
 }

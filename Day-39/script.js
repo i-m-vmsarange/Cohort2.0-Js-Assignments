@@ -144,3 +144,68 @@
 //   },
 // };
 // person.sayHi();
+
+// 5. Given an array of numbers, use map() to create a
+// new array where each number is squared.
+
+let arr = [1, 2, 3, 4, 5];
+
+let squares = arr.map((ele) => ele * ele);
+console.log(squares);
+
+// 6. Use `filter()` to get only even numbers from an
+// array.
+
+let evens = arr.filter((ele) => ele % 2 == 0);
+console.log(evens);
+
+// 7. Use `reduce()` to find the total salary from an array
+// of numbers ` [1000, 2000, 3000]`.
+let salaries = [1000, 2000, 3000];
+
+let salSum = salaries.reduce((acc, current) => {
+  return acc + current;
+}, 0);
+console.log(salSum);
+
+// 8. Create an array of names and use ` some() and
+// every()` to test a condition (e.g., all names longer than
+// 3 chars).
+
+let names = ["Raj", "om", "Ravi", "Pinky"];
+
+let nameLonger3Chars = names.some((name) => name.length > 3);
+console.log(nameLonger3Chars);
+
+let namesLonger3Char = names.every((name) => name.length > 3);
+console.log(namesLonger3Char);
+
+// 9. Create an object ` user` and test the behavior of
+// Object.freeze() and `Object.seal() by
+// adding/changing keys.
+
+let user = {
+  name: "Vaishnavi",
+  age: 23,
+  address: "Pune",
+};
+
+// Object.freeze(user); Niether we can change the value or add a new one
+Object.seal(user); // Here we can the change the object value but cannot add new value
+user.social = "instagram";
+console.log(user);
+user.age = 25;
+console.log(user);
+
+// 10. Create a nested object (`user > address > city ) and
+// access the city name inside it.
+
+let user2 = {
+  name: "vaishanvi",
+  age: 23,
+  address: {
+    city: "Pune",
+    state: "MH",
+    country: "India",
+  },
+};
